@@ -33,11 +33,11 @@
     <p><strong>Performance Score Weighting:</strong></p>
     <ul>
       <li>Runs × 1</li>
-      <li>Wickets × 2</li>
-      <li>Catches × 1.5</li>
+      <li>Wickets × 20</li>
+      <li>Catches × 5</li>
       <li>Economy × 1.3</li>
-      <li>Stumpings × 1.4</li>
-      <li>Boundaries × 1.1</li>
+      <li>Stumpings × 4</li>
+      <li>Boundaries × 1.5</li>
     </ul>
 
     <table>
@@ -184,7 +184,7 @@
                 let stumpings = parseFloat(document.getElementById('stumpings' + i)?.value) || 0;
                 let boundaries = parseFloat(document.getElementById('boundaries' + i)?.value) || 0;
 
-                let score = (runs * 1) + (wickets * 2) + (catches * 1.5) + (economy * 1.3) + (stumpings * 1.4) + (boundaries * 1.1);
+                let score = (runs * 1) + (wickets * 20) + (catches * 5) + (economy * 1.3) + (stumpings * 4) + (boundaries * 1.5);
                 document.getElementById('score' + i).innerText = score.toFixed(2);
             }
         }
