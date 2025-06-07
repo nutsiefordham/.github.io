@@ -36,6 +36,73 @@
         .nav a:hover {
             text-decoration: underline;
         }
+        /* Highlighted Intro Section */
+        .intro-section {
+            background: linear-gradient(120deg, #fffbe6 70%, #ffe4a1 100%);
+            border-radius: 18px;
+            border: 2px solid #ffc107;
+            padding: 32px 26px 22px 26px;
+            box-shadow: 0 4px 18px rgba(255,193,7,0.16);
+            margin: 0 auto 36px auto;
+            max-width: 850px;
+            position: relative;
+            overflow: hidden;
+        }
+        .intro-section .cricket-ball {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 90px;
+            opacity: 0.95;
+            filter: drop-shadow(0 2px 8px #ff9800a2);
+            z-index: 1;
+        }
+        .intro-section .bat {
+            position: absolute;
+            right: -25px;
+            bottom: -28px;
+            width: 120px;
+            opacity: 0.93;
+            z-index: 1;
+        }
+        .intro-content {
+            position: relative;
+            z-index: 2;
+        }
+        .intro-section h1 {
+            color: #ff9800;
+            text-shadow: 1px 2px 8px #fff3e0, 0 1px 0 #ffc107;
+            font-size: 2.45em;
+            margin-top: 0;
+        }
+        .intro-section p {
+            font-size: 1.22em;
+            margin: 0 0 16px 0;
+            color: #5d4300;
+        }
+        .intro-section ul {
+            margin: 0 0 0 18px;
+            color: #754c00;
+        }
+        .intro-section li {
+            font-size: 1.13em;
+            margin-bottom: 5px;
+        }
+        .intro-section strong, .intro-section em {
+            background: linear-gradient(90deg, #fffde7, #fff59d 70%);
+            border-radius: 5px;
+            padding: 0 6px;
+            color: #e65100;
+        }
+        @media (max-width: 600px) {
+            .intro-section {
+                padding: 18px 6px 12px 6px;
+            }
+            .intro-section .cricket-ball,
+            .intro-section .bat {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -43,28 +110,33 @@
         <a href="index.html">Home</a>
         <a href="contact.html">Contact Me</a>
     </div>
-    <h1>Cricket Man of the Match Calculator</h1>
 
-<section>
-  <p>
-    Tired of arguing over who really deserved <strong>Man of the Match</strong> after your Sunday league thriller? 
-    Whether you scored a gritty <em>12 off 117 balls</em> or took 5 wickets with some absolute filth, this tool is for you. 
-    Built for the very average cricketer (you know who you are), this calculator crunches the numbers so you don’t have to. 
-    Go on—give yourself the credit you think you deserve... even if you did turn up late.
-  </p>
+    <section class="intro-section">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Cricket_ball.png" alt="Cricket Ball" class="cricket-ball" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Cricket_bat_icon.png" alt="Cricket Bat" class="bat" />
+      <div class="intro-content">
+        <h1>Cricket Man of the Match Calculator</h1>
+        <p>
+          Tired of arguing over who really deserved <strong>Man of the Match</strong> after your Sunday league thriller? 
+          Whether you scored a gritty <em>12 off 117 balls</em> or took 5 wickets with some absolute filth, this tool is for you. 
+          Built for the very average cricketer (you know who you are), this calculator crunches the numbers so you don’t have to. 
+          Go on—give yourself the credit you think you deserve... even if you did turn up late.
+        </p>
 
-  <h3>Scoring Breakdown</h3>
-  <ul>
-    <li>Run = 1 point</li>
-    <li>Wicket = 20 points</li>
-    <li>Catch = 5 points</li>
-    <li>Economy* (Bowling) × 4</li>
-    <li>Stumping = 5 points</li>
-    <li>Boundary = 1.5 points</li>
-  </ul>
+        <h3 style="color:#f57c00;">Scoring Breakdown</h3>
+        <ul>
+          <li>Run = 1 point</li>
+          <li>Wicket = 20 points</li>
+          <li>Catch = 5 points</li>
+          <li>Economy* (Bowling) × 4</li>
+          <li>Stumping = 5 points</li>
+          <li>Boundary = 1.5 points</li>
+        </ul>
 
-  <p><strong>*Economy Scoring:</strong> We subtract your economy rate from 12 (because if you're going for more than 12 an over, you're losing points sorry), then apply the multiplier.</p>
-</section>
+        <p><strong>*Economy Scoring:</strong> We subtract your economy rate from 12 (because if you're going for more than 12 an over, you're losing points sorry), then apply the multiplier.</p>
+      </div>
+    </section>
+      
 
     <table>
         <thead>
@@ -196,7 +268,7 @@
     <button onclick="calculateScores()">Calculate Scores</button>
     <button onclick="window.print()">Print</button>
 
-       <script>
+    <script>
     function calculateScores() {
         for (let i = 1; i <= 11; i++) {
             let runs = parseFloat(document.getElementById('runs' + i)?.value) || 0;
@@ -213,48 +285,47 @@
             document.getElementById('score' + i).innerText = score.toFixed(2);
         }
     }
-</script>
+    </script>
 
+    <style>
+      .donation-section {
+        background-color: #f9f9f9;
+        border-left: 5px solid #4CAF50;
+        padding: 20px;
+        margin: 30px auto;
+        max-width: 700px;
+        font-family: Arial, sans-serif;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
 
-<style>
-  .donation-section {
-    background-color: #f9f9f9;
-    border-left: 5px solid #4CAF50;
-    padding: 20px;
-    margin: 30px auto;
-    max-width: 700px;
-    font-family: Arial, sans-serif;
-    font-size: 1.1em;
-    line-height: 1.6;
-  }
+      .donation-section p {
+        margin-bottom: 20px;
+      }
 
-  .donation-section p {
-    margin-bottom: 20px;
-  }
+      .donate-button {
+        text-align: center;
+      }
+    </style>
 
-  .donate-button {
-    text-align: center;
-  }
-</style>
+    <div class="donation-section">
+      <p>
+        <strong>This free Man of the Match calculator</strong> was built for grassroots scorers, club captains, and cricket lovers everywhere. 
+        If it’s helped you settle a post-match debate or saved you time at the scorebook, consider donating to keep it online and evolving. 
+        Every run (and pound) counts!
+      </p>
 
-<div class="donation-section">
-  <p>
-    <strong>This free Man of the Match calculator</strong> was built for grassroots scorers, club captains, and cricket lovers everywhere. 
-    If it’s helped you settle a post-match debate or saved you time at the scorebook, consider donating to keep it online and evolving. 
-    Every run (and pound) counts!
-  </p>
-
-  <div class="donate-button">
-    <form action="https://www.paypal.com/donate" method="post" target="_blank">
-      <input type="hidden" name="business" value="fordhamguitar@gmail.com" />
-      <input type="hidden" name="no_recurring" value="0" />
-      <input type="hidden" name="item_name" value="Support Cricket Player of the Match Calculator" />
-      <input type="hidden" name="currency_code" value="GBP" />
-      <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" title="Donate with PayPal" alt="Donate with PayPal button" />
-      <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
-    </form>
-  </div>
-</div>
+      <div class="donate-button">
+        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+          <input type="hidden" name="business" value="fordhamguitar@gmail.com" />
+          <input type="hidden" name="no_recurring" value="0" />
+          <input type="hidden" name="item_name" value="Support Cricket Player of the Match Calculator" />
+          <input type="hidden" name="currency_code" value="GBP" />
+          <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" title="Donate with PayPal" alt="Donate with PayPal button" />
+          <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+      </div>
+    </div>
 
 </body>
 </html>
