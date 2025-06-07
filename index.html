@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +24,25 @@
             font-size: 1.2em;
             font-weight: bold;
         }
+        .nav {
+            margin-bottom: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #2196F3;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Me</a>
+    </div>
     <h1>Cricket Man of the Match Calculator</h1>
 
 <section>
@@ -51,8 +66,6 @@
   <p><strong>*Economy Scoring:</strong> We subtract your economy rate from 12 (because if you're going for more than 12 an over, you're losing points sorry), then apply the multiplier.</p>
 </section>
 
-      
-
     <table>
         <thead>
             <tr>
@@ -68,10 +81,6 @@
         </thead>
         <tbody>
             <!-- Generate 11 player rows -->
-            <!-- Each row has inputs and a score display -->
-            <!-- Below is static HTML for 11 players -->
-            <!-- Player rows -->
-            <!-- Begin -->
             <tr>
                 <td><input type="text" id="name1"></td>
                 <td><input type="number" id="runs1"></td>
@@ -247,22 +256,5 @@
   </div>
 </div>
 
-    <p>
-        
-<h2>Contact Me</h2>
-<form action="mailto:hello@cricketpotm.co.uk" method="post" enctype="text/plain">
-  <label for="name">Your Name:</label><br>
-  <input type="text" id="name" name="name" required><br><br>
-
-  <label for="email">Your Email:</label><br>
-  <input type="email" id="email" name="email" required><br><br>
-
-  <label for="message">Message:</label><br>
-  <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-  <input type="submit" value="Send">
-</form>
-
-    </p>
 </body>
 </html>
